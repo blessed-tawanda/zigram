@@ -1,0 +1,33 @@
+<div class="flex w-3/4 h-screen mx-auto items-center space-between">
+  <div class="w-1/2">
+   <%= image_tag 'banner.jpg', class: "w-3/4 mx-auto"%>
+  </div>
+  <div class="w-1/2 border-gray-600 border-2 rounded">
+    <h1 class="text-center my-12 font-bold">ZiGram</h1>
+    <%= form_with url:signin_path do |form|%>
+      <div class="mb-4 w-3/4 mx-auto">
+        <%= form.text_field :email,
+          placeholder: "johndube@gmail.com",
+          class: "form-input rounded w-full"    
+        %>
+      </div>
+      <div class="mb-4 w-3/4 mx-auto">
+        <%= form.password_field :password,
+          placeholder: "password",
+          class: "form-input rounded w-full"
+        %>
+      </div>
+      <div class="mb-4 w-3/4 mx-auto">
+        <%= form.submit "Sign In", class: "font-bold text-white bg-sky-500 w-full cursor-pointer hover:bg-sky-400 px-2 py-2 rounded"%>
+      </div>
+    <% end %>
+    <div class="text-center w-3/4 mx-auto mb-6 mt-6 px-2 py-2 rounded">
+      <%= link_to "Forgot Password", signin_path,class: "font-bold text-blue-500 border-1 w-full px-2 py-2 hover:text-gray-700"%>
+    </div>
+    <h1 class="text-center mb-4"> Or </h1>
+    <div class="text-center w-3/4 mx-auto mb-12 border px-2 py-2 rounded">
+      Don't have an account?
+      <%= link_to "Sign Up", signup_path, class: "font-bold text-blue-500 border-1 w-full px-2 py-2 hover:text-gray-700"%>
+    </div>
+  </div>
+</div>
